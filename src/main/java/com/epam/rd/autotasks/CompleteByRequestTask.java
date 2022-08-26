@@ -1,18 +1,22 @@
 package com.epam.rd.autotasks;
 
 public class CompleteByRequestTask implements Task {
+    boolean finished = false;
+    boolean completed;
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException();
+        if (completed) {
+            finished = true;
+        }
     }
 
     @Override
     public boolean isFinished() {
-        throw new UnsupportedOperationException();
+        return finished;
     }
 
     public void complete() {
-        throw new UnsupportedOperationException();
+        this.completed = true;
     }
 }
